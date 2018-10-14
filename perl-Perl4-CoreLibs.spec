@@ -4,14 +4,13 @@
 #
 Name     : perl-Perl4-CoreLibs
 Version  : 0.004
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/Z/ZE/ZEFRAM/Perl4-CoreLibs-0.004.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/Z/ZE/ZEFRAM/Perl4-CoreLibs-0.004.tar.gz
 Summary  : 'libraries historically supplied with Perl 4'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-Perl4-CoreLibs-man
-BuildRequires : perl(Module::Build)
+BuildRequires : buildreq-cpan
 
 %description
 NAME
@@ -24,12 +23,13 @@ distribution instead.  From core version 5.13.3 until their removal, the
 core versions of these libraries emit a deprecation warning when loaded.
 The CPAN version does not emit such a warning.
 
-%package man
-Summary: man components for the perl-Perl4-CoreLibs package.
-Group: Default
+%package dev
+Summary: dev components for the perl-Perl4-CoreLibs package.
+Group: Development
+Provides: perl-Perl4-CoreLibs-devel = %{version}-%{release}
 
-%description man
-man components for the perl-Perl4-CoreLibs package.
+%description dev
+dev components for the perl-Perl4-CoreLibs package.
 
 
 %prep
@@ -51,9 +51,9 @@ fi
 %install
 rm -rf %{buildroot}
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -62,41 +62,41 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/Perl4/CoreLibs.pm
-/usr/lib/perl5/site_perl/5.26.1/abbrev.pl
-/usr/lib/perl5/site_perl/5.26.1/assert.pl
-/usr/lib/perl5/site_perl/5.26.1/bigfloat.pl
-/usr/lib/perl5/site_perl/5.26.1/bigint.pl
-/usr/lib/perl5/site_perl/5.26.1/bigrat.pl
-/usr/lib/perl5/site_perl/5.26.1/cacheout.pl
-/usr/lib/perl5/site_perl/5.26.1/chat2.pl
-/usr/lib/perl5/site_perl/5.26.1/complete.pl
-/usr/lib/perl5/site_perl/5.26.1/ctime.pl
-/usr/lib/perl5/site_perl/5.26.1/dotsh.pl
-/usr/lib/perl5/site_perl/5.26.1/exceptions.pl
-/usr/lib/perl5/site_perl/5.26.1/fastcwd.pl
-/usr/lib/perl5/site_perl/5.26.1/find.pl
-/usr/lib/perl5/site_perl/5.26.1/finddepth.pl
-/usr/lib/perl5/site_perl/5.26.1/flush.pl
-/usr/lib/perl5/site_perl/5.26.1/ftp.pl
-/usr/lib/perl5/site_perl/5.26.1/getcwd.pl
-/usr/lib/perl5/site_perl/5.26.1/getopt.pl
-/usr/lib/perl5/site_perl/5.26.1/getopts.pl
-/usr/lib/perl5/site_perl/5.26.1/hostname.pl
-/usr/lib/perl5/site_perl/5.26.1/importenv.pl
-/usr/lib/perl5/site_perl/5.26.1/look.pl
-/usr/lib/perl5/site_perl/5.26.1/newgetopt.pl
-/usr/lib/perl5/site_perl/5.26.1/open2.pl
-/usr/lib/perl5/site_perl/5.26.1/open3.pl
-/usr/lib/perl5/site_perl/5.26.1/pwd.pl
-/usr/lib/perl5/site_perl/5.26.1/shellwords.pl
-/usr/lib/perl5/site_perl/5.26.1/stat.pl
-/usr/lib/perl5/site_perl/5.26.1/syslog.pl
-/usr/lib/perl5/site_perl/5.26.1/tainted.pl
-/usr/lib/perl5/site_perl/5.26.1/termcap.pl
-/usr/lib/perl5/site_perl/5.26.1/timelocal.pl
-/usr/lib/perl5/site_perl/5.26.1/validate.pl
+/usr/lib/perl5/vendor_perl/5.26.1/Perl4/CoreLibs.pm
+/usr/lib/perl5/vendor_perl/5.26.1/abbrev.pl
+/usr/lib/perl5/vendor_perl/5.26.1/assert.pl
+/usr/lib/perl5/vendor_perl/5.26.1/bigfloat.pl
+/usr/lib/perl5/vendor_perl/5.26.1/bigint.pl
+/usr/lib/perl5/vendor_perl/5.26.1/bigrat.pl
+/usr/lib/perl5/vendor_perl/5.26.1/cacheout.pl
+/usr/lib/perl5/vendor_perl/5.26.1/chat2.pl
+/usr/lib/perl5/vendor_perl/5.26.1/complete.pl
+/usr/lib/perl5/vendor_perl/5.26.1/ctime.pl
+/usr/lib/perl5/vendor_perl/5.26.1/dotsh.pl
+/usr/lib/perl5/vendor_perl/5.26.1/exceptions.pl
+/usr/lib/perl5/vendor_perl/5.26.1/fastcwd.pl
+/usr/lib/perl5/vendor_perl/5.26.1/find.pl
+/usr/lib/perl5/vendor_perl/5.26.1/finddepth.pl
+/usr/lib/perl5/vendor_perl/5.26.1/flush.pl
+/usr/lib/perl5/vendor_perl/5.26.1/ftp.pl
+/usr/lib/perl5/vendor_perl/5.26.1/getcwd.pl
+/usr/lib/perl5/vendor_perl/5.26.1/getopt.pl
+/usr/lib/perl5/vendor_perl/5.26.1/getopts.pl
+/usr/lib/perl5/vendor_perl/5.26.1/hostname.pl
+/usr/lib/perl5/vendor_perl/5.26.1/importenv.pl
+/usr/lib/perl5/vendor_perl/5.26.1/look.pl
+/usr/lib/perl5/vendor_perl/5.26.1/newgetopt.pl
+/usr/lib/perl5/vendor_perl/5.26.1/open2.pl
+/usr/lib/perl5/vendor_perl/5.26.1/open3.pl
+/usr/lib/perl5/vendor_perl/5.26.1/pwd.pl
+/usr/lib/perl5/vendor_perl/5.26.1/shellwords.pl
+/usr/lib/perl5/vendor_perl/5.26.1/stat.pl
+/usr/lib/perl5/vendor_perl/5.26.1/syslog.pl
+/usr/lib/perl5/vendor_perl/5.26.1/tainted.pl
+/usr/lib/perl5/vendor_perl/5.26.1/termcap.pl
+/usr/lib/perl5/vendor_perl/5.26.1/timelocal.pl
+/usr/lib/perl5/vendor_perl/5.26.1/validate.pl
 
-%files man
+%files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Perl4::CoreLibs.3
