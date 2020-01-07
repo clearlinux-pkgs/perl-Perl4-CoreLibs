@@ -4,12 +4,13 @@
 #
 Name     : perl-Perl4-CoreLibs
 Version  : 0.004
-Release  : 10
+Release  : 11
 URL      : https://cpan.metacpan.org/authors/id/Z/ZE/ZEFRAM/Perl4-CoreLibs-0.004.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/Z/ZE/ZEFRAM/Perl4-CoreLibs-0.004.tar.gz
 Summary  : 'libraries historically supplied with Perl 4'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
+Requires: perl-Perl4-CoreLibs-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -27,19 +28,30 @@ The CPAN version does not emit such a warning.
 Summary: dev components for the perl-Perl4-CoreLibs package.
 Group: Development
 Provides: perl-Perl4-CoreLibs-devel = %{version}-%{release}
+Requires: perl-Perl4-CoreLibs = %{version}-%{release}
 
 %description dev
 dev components for the perl-Perl4-CoreLibs package.
 
 
+%package perl
+Summary: perl components for the perl-Perl4-CoreLibs package.
+Group: Default
+Requires: perl-Perl4-CoreLibs = %{version}-%{release}
+
+%description perl
+perl components for the perl-Perl4-CoreLibs package.
+
+
 %prep
 %setup -q -n Perl4-CoreLibs-0.004
+cd %{_builddir}/Perl4-CoreLibs-0.004
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -62,41 +74,44 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Perl4/CoreLibs.pm
-/usr/lib/perl5/vendor_perl/5.28.2/abbrev.pl
-/usr/lib/perl5/vendor_perl/5.28.2/assert.pl
-/usr/lib/perl5/vendor_perl/5.28.2/bigfloat.pl
-/usr/lib/perl5/vendor_perl/5.28.2/bigint.pl
-/usr/lib/perl5/vendor_perl/5.28.2/bigrat.pl
-/usr/lib/perl5/vendor_perl/5.28.2/cacheout.pl
-/usr/lib/perl5/vendor_perl/5.28.2/chat2.pl
-/usr/lib/perl5/vendor_perl/5.28.2/complete.pl
-/usr/lib/perl5/vendor_perl/5.28.2/ctime.pl
-/usr/lib/perl5/vendor_perl/5.28.2/dotsh.pl
-/usr/lib/perl5/vendor_perl/5.28.2/exceptions.pl
-/usr/lib/perl5/vendor_perl/5.28.2/fastcwd.pl
-/usr/lib/perl5/vendor_perl/5.28.2/find.pl
-/usr/lib/perl5/vendor_perl/5.28.2/finddepth.pl
-/usr/lib/perl5/vendor_perl/5.28.2/flush.pl
-/usr/lib/perl5/vendor_perl/5.28.2/ftp.pl
-/usr/lib/perl5/vendor_perl/5.28.2/getcwd.pl
-/usr/lib/perl5/vendor_perl/5.28.2/getopt.pl
-/usr/lib/perl5/vendor_perl/5.28.2/getopts.pl
-/usr/lib/perl5/vendor_perl/5.28.2/hostname.pl
-/usr/lib/perl5/vendor_perl/5.28.2/importenv.pl
-/usr/lib/perl5/vendor_perl/5.28.2/look.pl
-/usr/lib/perl5/vendor_perl/5.28.2/newgetopt.pl
-/usr/lib/perl5/vendor_perl/5.28.2/open2.pl
-/usr/lib/perl5/vendor_perl/5.28.2/open3.pl
-/usr/lib/perl5/vendor_perl/5.28.2/pwd.pl
-/usr/lib/perl5/vendor_perl/5.28.2/shellwords.pl
-/usr/lib/perl5/vendor_perl/5.28.2/stat.pl
-/usr/lib/perl5/vendor_perl/5.28.2/syslog.pl
-/usr/lib/perl5/vendor_perl/5.28.2/tainted.pl
-/usr/lib/perl5/vendor_perl/5.28.2/termcap.pl
-/usr/lib/perl5/vendor_perl/5.28.2/timelocal.pl
-/usr/lib/perl5/vendor_perl/5.28.2/validate.pl
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Perl4::CoreLibs.3
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Perl4/CoreLibs.pm
+/usr/lib/perl5/vendor_perl/5.30.1/abbrev.pl
+/usr/lib/perl5/vendor_perl/5.30.1/assert.pl
+/usr/lib/perl5/vendor_perl/5.30.1/bigfloat.pl
+/usr/lib/perl5/vendor_perl/5.30.1/bigint.pl
+/usr/lib/perl5/vendor_perl/5.30.1/bigrat.pl
+/usr/lib/perl5/vendor_perl/5.30.1/cacheout.pl
+/usr/lib/perl5/vendor_perl/5.30.1/chat2.pl
+/usr/lib/perl5/vendor_perl/5.30.1/complete.pl
+/usr/lib/perl5/vendor_perl/5.30.1/ctime.pl
+/usr/lib/perl5/vendor_perl/5.30.1/dotsh.pl
+/usr/lib/perl5/vendor_perl/5.30.1/exceptions.pl
+/usr/lib/perl5/vendor_perl/5.30.1/fastcwd.pl
+/usr/lib/perl5/vendor_perl/5.30.1/find.pl
+/usr/lib/perl5/vendor_perl/5.30.1/finddepth.pl
+/usr/lib/perl5/vendor_perl/5.30.1/flush.pl
+/usr/lib/perl5/vendor_perl/5.30.1/ftp.pl
+/usr/lib/perl5/vendor_perl/5.30.1/getcwd.pl
+/usr/lib/perl5/vendor_perl/5.30.1/getopt.pl
+/usr/lib/perl5/vendor_perl/5.30.1/getopts.pl
+/usr/lib/perl5/vendor_perl/5.30.1/hostname.pl
+/usr/lib/perl5/vendor_perl/5.30.1/importenv.pl
+/usr/lib/perl5/vendor_perl/5.30.1/look.pl
+/usr/lib/perl5/vendor_perl/5.30.1/newgetopt.pl
+/usr/lib/perl5/vendor_perl/5.30.1/open2.pl
+/usr/lib/perl5/vendor_perl/5.30.1/open3.pl
+/usr/lib/perl5/vendor_perl/5.30.1/pwd.pl
+/usr/lib/perl5/vendor_perl/5.30.1/shellwords.pl
+/usr/lib/perl5/vendor_perl/5.30.1/stat.pl
+/usr/lib/perl5/vendor_perl/5.30.1/syslog.pl
+/usr/lib/perl5/vendor_perl/5.30.1/tainted.pl
+/usr/lib/perl5/vendor_perl/5.30.1/termcap.pl
+/usr/lib/perl5/vendor_perl/5.30.1/timelocal.pl
+/usr/lib/perl5/vendor_perl/5.30.1/validate.pl
