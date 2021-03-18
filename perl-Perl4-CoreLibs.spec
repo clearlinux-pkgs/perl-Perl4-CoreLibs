@@ -4,7 +4,7 @@
 #
 Name     : perl-Perl4-CoreLibs
 Version  : 0.004
-Release  : 13
+Release  : 14
 URL      : https://cpan.metacpan.org/authors/id/Z/ZE/ZEFRAM/Perl4-CoreLibs-0.004.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/Z/ZE/ZEFRAM/Perl4-CoreLibs-0.004.tar.gz
 Summary  : 'libraries historically supplied with Perl 4'
@@ -81,37 +81,37 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.3/Perl4/CoreLibs.pm
-/usr/lib/perl5/vendor_perl/5.30.3/abbrev.pl
-/usr/lib/perl5/vendor_perl/5.30.3/assert.pl
-/usr/lib/perl5/vendor_perl/5.30.3/bigfloat.pl
-/usr/lib/perl5/vendor_perl/5.30.3/bigint.pl
-/usr/lib/perl5/vendor_perl/5.30.3/bigrat.pl
-/usr/lib/perl5/vendor_perl/5.30.3/cacheout.pl
-/usr/lib/perl5/vendor_perl/5.30.3/chat2.pl
-/usr/lib/perl5/vendor_perl/5.30.3/complete.pl
-/usr/lib/perl5/vendor_perl/5.30.3/ctime.pl
-/usr/lib/perl5/vendor_perl/5.30.3/dotsh.pl
-/usr/lib/perl5/vendor_perl/5.30.3/exceptions.pl
-/usr/lib/perl5/vendor_perl/5.30.3/fastcwd.pl
-/usr/lib/perl5/vendor_perl/5.30.3/find.pl
-/usr/lib/perl5/vendor_perl/5.30.3/finddepth.pl
-/usr/lib/perl5/vendor_perl/5.30.3/flush.pl
-/usr/lib/perl5/vendor_perl/5.30.3/ftp.pl
-/usr/lib/perl5/vendor_perl/5.30.3/getcwd.pl
-/usr/lib/perl5/vendor_perl/5.30.3/getopt.pl
-/usr/lib/perl5/vendor_perl/5.30.3/getopts.pl
-/usr/lib/perl5/vendor_perl/5.30.3/hostname.pl
-/usr/lib/perl5/vendor_perl/5.30.3/importenv.pl
-/usr/lib/perl5/vendor_perl/5.30.3/look.pl
-/usr/lib/perl5/vendor_perl/5.30.3/newgetopt.pl
-/usr/lib/perl5/vendor_perl/5.30.3/open2.pl
-/usr/lib/perl5/vendor_perl/5.30.3/open3.pl
-/usr/lib/perl5/vendor_perl/5.30.3/pwd.pl
-/usr/lib/perl5/vendor_perl/5.30.3/shellwords.pl
-/usr/lib/perl5/vendor_perl/5.30.3/stat.pl
-/usr/lib/perl5/vendor_perl/5.30.3/syslog.pl
-/usr/lib/perl5/vendor_perl/5.30.3/tainted.pl
-/usr/lib/perl5/vendor_perl/5.30.3/termcap.pl
-/usr/lib/perl5/vendor_perl/5.30.3/timelocal.pl
-/usr/lib/perl5/vendor_perl/5.30.3/validate.pl
+/usr/lib/perl5/vendor_perl/5.32.1/Perl4/CoreLibs.pm
+/usr/lib/perl5/vendor_perl/5.32.1/abbrev.pl
+/usr/lib/perl5/vendor_perl/5.32.1/assert.pl
+/usr/lib/perl5/vendor_perl/5.32.1/bigfloat.pl
+/usr/lib/perl5/vendor_perl/5.32.1/bigint.pl
+/usr/lib/perl5/vendor_perl/5.32.1/bigrat.pl
+/usr/lib/perl5/vendor_perl/5.32.1/cacheout.pl
+/usr/lib/perl5/vendor_perl/5.32.1/chat2.pl
+/usr/lib/perl5/vendor_perl/5.32.1/complete.pl
+/usr/lib/perl5/vendor_perl/5.32.1/ctime.pl
+/usr/lib/perl5/vendor_perl/5.32.1/dotsh.pl
+/usr/lib/perl5/vendor_perl/5.32.1/exceptions.pl
+/usr/lib/perl5/vendor_perl/5.32.1/fastcwd.pl
+/usr/lib/perl5/vendor_perl/5.32.1/find.pl
+/usr/lib/perl5/vendor_perl/5.32.1/finddepth.pl
+/usr/lib/perl5/vendor_perl/5.32.1/flush.pl
+/usr/lib/perl5/vendor_perl/5.32.1/ftp.pl
+/usr/lib/perl5/vendor_perl/5.32.1/getcwd.pl
+/usr/lib/perl5/vendor_perl/5.32.1/getopt.pl
+/usr/lib/perl5/vendor_perl/5.32.1/getopts.pl
+/usr/lib/perl5/vendor_perl/5.32.1/hostname.pl
+/usr/lib/perl5/vendor_perl/5.32.1/importenv.pl
+/usr/lib/perl5/vendor_perl/5.32.1/look.pl
+/usr/lib/perl5/vendor_perl/5.32.1/newgetopt.pl
+/usr/lib/perl5/vendor_perl/5.32.1/open2.pl
+/usr/lib/perl5/vendor_perl/5.32.1/open3.pl
+/usr/lib/perl5/vendor_perl/5.32.1/pwd.pl
+/usr/lib/perl5/vendor_perl/5.32.1/shellwords.pl
+/usr/lib/perl5/vendor_perl/5.32.1/stat.pl
+/usr/lib/perl5/vendor_perl/5.32.1/syslog.pl
+/usr/lib/perl5/vendor_perl/5.32.1/tainted.pl
+/usr/lib/perl5/vendor_perl/5.32.1/termcap.pl
+/usr/lib/perl5/vendor_perl/5.32.1/timelocal.pl
+/usr/lib/perl5/vendor_perl/5.32.1/validate.pl
