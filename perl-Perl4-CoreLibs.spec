@@ -4,7 +4,7 @@
 #
 Name     : perl-Perl4-CoreLibs
 Version  : 0.004
-Release  : 19
+Release  : 20
 URL      : https://cpan.metacpan.org/authors/id/Z/ZE/ZEFRAM/Perl4-CoreLibs-0.004.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/Z/ZE/ZEFRAM/Perl4-CoreLibs-0.004.tar.gz
 Summary  : 'libraries historically supplied with Perl 4'
@@ -81,37 +81,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/Perl4/CoreLibs.pm
-/usr/lib/perl5/vendor_perl/5.34.0/abbrev.pl
-/usr/lib/perl5/vendor_perl/5.34.0/assert.pl
-/usr/lib/perl5/vendor_perl/5.34.0/bigfloat.pl
-/usr/lib/perl5/vendor_perl/5.34.0/bigint.pl
-/usr/lib/perl5/vendor_perl/5.34.0/bigrat.pl
-/usr/lib/perl5/vendor_perl/5.34.0/cacheout.pl
-/usr/lib/perl5/vendor_perl/5.34.0/chat2.pl
-/usr/lib/perl5/vendor_perl/5.34.0/complete.pl
-/usr/lib/perl5/vendor_perl/5.34.0/ctime.pl
-/usr/lib/perl5/vendor_perl/5.34.0/dotsh.pl
-/usr/lib/perl5/vendor_perl/5.34.0/exceptions.pl
-/usr/lib/perl5/vendor_perl/5.34.0/fastcwd.pl
-/usr/lib/perl5/vendor_perl/5.34.0/find.pl
-/usr/lib/perl5/vendor_perl/5.34.0/finddepth.pl
-/usr/lib/perl5/vendor_perl/5.34.0/flush.pl
-/usr/lib/perl5/vendor_perl/5.34.0/ftp.pl
-/usr/lib/perl5/vendor_perl/5.34.0/getcwd.pl
-/usr/lib/perl5/vendor_perl/5.34.0/getopt.pl
-/usr/lib/perl5/vendor_perl/5.34.0/getopts.pl
-/usr/lib/perl5/vendor_perl/5.34.0/hostname.pl
-/usr/lib/perl5/vendor_perl/5.34.0/importenv.pl
-/usr/lib/perl5/vendor_perl/5.34.0/look.pl
-/usr/lib/perl5/vendor_perl/5.34.0/newgetopt.pl
-/usr/lib/perl5/vendor_perl/5.34.0/open2.pl
-/usr/lib/perl5/vendor_perl/5.34.0/open3.pl
-/usr/lib/perl5/vendor_perl/5.34.0/pwd.pl
-/usr/lib/perl5/vendor_perl/5.34.0/shellwords.pl
-/usr/lib/perl5/vendor_perl/5.34.0/stat.pl
-/usr/lib/perl5/vendor_perl/5.34.0/syslog.pl
-/usr/lib/perl5/vendor_perl/5.34.0/tainted.pl
-/usr/lib/perl5/vendor_perl/5.34.0/termcap.pl
-/usr/lib/perl5/vendor_perl/5.34.0/timelocal.pl
-/usr/lib/perl5/vendor_perl/5.34.0/validate.pl
+/usr/lib/perl5/*
