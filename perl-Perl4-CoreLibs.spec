@@ -4,7 +4,7 @@
 #
 Name     : perl-Perl4-CoreLibs
 Version  : 0.005
-Release  : 22
+Release  : 23
 URL      : https://cpan.metacpan.org/authors/id/Z/ZE/ZEFRAM/Perl4-CoreLibs-0.005.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/Z/ZE/ZEFRAM/Perl4-CoreLibs-0.005.tar.gz
 Summary  : 'libraries historically supplied with Perl 4'
